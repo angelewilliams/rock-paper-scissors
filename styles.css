@@ -1,0 +1,29 @@
+* {
+  border: #D57A66 2px solid;
+  border-style: dashed;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+main {
+  border: blue 2px dotted;
+  width: 60vw;
+
+}
+aside {
+  width: 20vw;
+}
+.player-graphic {
+  max-height: 30px;
+}
+
+.hidden {
+  display: none;
+}
