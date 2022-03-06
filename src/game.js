@@ -4,16 +4,7 @@ class Game {
     this.player2 = new Player('Computer', '💻' );
     this.gameType = null;
     this.winner = null;
-    this.winConditionsChallenge = [
-      {type:'rock', beats:['scissors']},
-      {type:'paper', beats:['rock']},
-      {type:'scissors', beats:['paper']},
-      {type:'pan', beats: ['spoon', 'whisk']},
-      {type:'bowl', beats: ['pan', 'knife']},
-      {type:'spoon', beats: ['bowl', 'whisk']},
-      {type:'whisk', beats: ['bowl', 'knife']},
-      {type:'knife', beats: ['spoon', 'pan']}
-    ];
+
   }
 
   autoplay(){
@@ -62,7 +53,6 @@ class Game {
   }
 
 }
-// Two Player instances
 // A way to keep track of the data for the game board
 // A way to keep track of the selected game type
 // A way to check the Game’s board data for win conditions
@@ -124,3 +114,13 @@ class Game {
       //   }
       //   return `${this.winner} won!`;
       // }
+//     this.winConditionsChallenge = [
+    //   {type:'rock', beats:['scissors']},
+    //   {type:'paper', beats:['rock']},
+    //   {type:'scissors', beats:['paper']},
+    //   {type:'pan', beats: ['spoon', 'whisk']},
+    //   {type:'bowl', beats: ['pan', 'knife']},
+    //   {type:'spoon', beats: ['bowl', 'whisk']},
+    //   {type:'whisk', beats: ['bowl', 'knife']},
+    //   {type:'knife', beats: ['spoon', 'pan']}
+    // ];
