@@ -2,9 +2,8 @@ class Game {
   constructor(){
     this.player1 = new Player('Human', '🙍');
     this.player2 = new Player('Computer', '💻' );
-    this.gameType = null;
-    this.winner = null;
-
+    this.gameType;
+    this.winner;
   }
 
   autoplay(){
@@ -13,7 +12,7 @@ class Game {
     this.player2.makeRandomChoice(this.player2.classicGame);
     console.log(this.player2.fighter);
   }
-
+//for testing purposes
 
   autoplayChefVersion(){
     this.player1.makeRandomChoice(this.player1.chefChallengeGame);
@@ -21,7 +20,9 @@ class Game {
     this.player2.makeRandomChoice(this.player2.chefChallengeGame);
     console.log(this.player2.fighter.type);
   }
-
+  setGameType(input){
+    this.gameType = input;
+  }
 
   evaluateGame(){
     // var compare = this.player2.fighter.type;
@@ -38,20 +39,25 @@ class Game {
       return `${this.winner} won!`
   }
 
-
-
-
-  recordWin() {
-      if (this.player1.winner) {
+  updateScore() {
+      if (!this.winner){
+        return 'No points'
+      }
+      else if (this.winner === this.player1.name) {
         this.player1.wins++;
-      } else if (this.player2.winner) {
+        return `${this.player1.name} has ${this.player1.wins} points`
+      } else if (this.winner === this.player2.name) {
         this.player2.wins++;
+        return `${this.player2.name} has ${this.player2.wins} points`
       }
     }
   resetGame(){
 
-  }
 
+  }
+  setTimeout(){
+    // setTimeout(setDefaultScreen,1750)
+  };
 }
 // A way to keep track of the data for the game board
 // A way to keep track of the selected game type

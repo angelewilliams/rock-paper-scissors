@@ -6,22 +6,53 @@ var infoClassic = document.querySelector('.game-classic');
 var infoDifficult = document.querySelector('.game-difficult');
 var classicGame = document.querySelector('.classic-game');
 var difficultGame = document.querySelector('.difficult-game');
+var changeGameB = document.querySelector('.change-game');
+var game = document.querySelector('.game-area');
 
 // var ___ = document.querySelector('')
 var game = new Game();
 //EVENT LISTENERS
 
-infoClassic.addEventListener('click', displayGame);
+infoClassic.addEventListener('click', displayClassicGame);
+infoDifficult.addEventListener('click', displayDifficultGame);
+changeGameB.addEventListener('click', displayMainView);
 
+
+
+parent.addEventListener('click', function(event) {
+  if (event.target.className === 'icon') {
+    // do your action on your 'button' or whatever it is you're listening for
+  }
+});
 
 //FUNCTIONS AND EVENT HANDLERS
 
-function displayGame(){
+function displayClassicGame(){
   event.preventDefault();
   hideElement(infoClassic);
   hideElement(infoDifficult);
   viewElement(classicGame);
+  viewElement(changeGameB);
 }
+
+function displayDifficultGame(){
+  event.preventDefault();
+  hideElement(infoClassic);
+  hideElement(infoDifficult);
+  viewElement(difficultGame);
+  viewElement(changeGameB);
+}
+
+function displayMainView(){
+  event.preventDefault();
+  hideElement(difficultGame);
+  hideElement(changeGameB);
+  hideElement(classicGame);
+  viewElement(infoDifficult);
+  viewElement(infoClassic);
+}
+
+
 
 // event.target.closest('')
 // event.preventDefault();
