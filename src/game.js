@@ -5,6 +5,9 @@ class Game {
     this.gameType = null;
     this.winner = null;
     this.winConditionsChallenge = [
+      {type:'rock', beats:['scissors']},
+      {type:'paper', beats:['rock']},
+      {type:'scissors', beats:['paper']},
       {type:'pan', beats: ['spoon', 'whisk']},
       {type:'bowl', beats: ['pan', 'knife']},
       {type:'spoon', beats: ['bowl', 'whisk']},
@@ -31,17 +34,15 @@ class Game {
 
   evaluateGame(){
     // var compare = this.player2.fighter.type;
-     if (this.player1.fighter === this.player2.fighter){
+     if (this.player1.fighter.type === this.player2.fighter.type){
         this.winner = null;
         return `It's a draw!`
       }
       else if (this.player1.fighter.beats.includes(`${this.player2.fighter.type}`)) {
         this.winner = this.player1.name;
       }
-
       else {
         this.winner = this.player2.name;
-        // return `${this.player2.name} won!`
       }
       return `${this.winner} won!`
   }

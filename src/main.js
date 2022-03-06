@@ -11,8 +11,10 @@ var game = new Game();
 //maybe have an array of the rock paper scissor options and then for classic game only use index 0-2  and for the difficult version use whole array
 
 // this returns a random classic something.playerComputer.makeRandomChoice()
-
-
+// var timeoutID = setTimeout(function[, delay, arg1, arg2, ...]);
+// var timeoutID = setTimeout(function[, delay]);
+// var timeoutID = setTimeout(code[, delay]);
+// https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 // CONTENTS
 /*
 rock > scissors

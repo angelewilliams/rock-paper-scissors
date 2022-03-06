@@ -1,7 +1,7 @@
 class Player {
   constructor(name, token){
     this.name = name;
-    this.token = token;
+    this.token = token || '😎';
     this.wins = 0;
     this.fighter = null;
     this.classicGame = [
@@ -21,14 +21,15 @@ class Player {
     //should start with 0 wins
   }
 //maybe should be take turn
-  generateComputerChoice(array) {
+  makeRandomChoice(array) {
     this.fighter = array[Math.floor(Math.random() * array.length)];
     //this is going to give us a string value of the type property of the object stored in the classic or chef version of the game
     return this.fighter;
   }
-  takeTurn(array, input) {
+  takeTurn(input, array) {
     if (this.name = 'Human'){
       this.fighter = input;
+      //OR this.fighter.value --that comes from
     }
     else if (this.name = 'Computer'){
     this.fighter = array[Math.floor(Math.random() * array.length)];
