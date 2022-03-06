@@ -21,12 +21,12 @@ scissors > paper
 
 difficult -> chef challenge
 pan > spoon || whisk
-if player1.fighter is pan and player2.fighter contains spoon or whisk =- player1 wins
 bowl > pan || knife
 spoon > bowl || whisk
 whisk > bowl || knife
 knife > spoon || pan
 
+if player1.fighter is pan and player2.fighter contains spoon or whisk =- player1 wins
 
 what needs to happen
 user decides on game they are playing which determines the number of options they have and winning conditions

@@ -3,33 +3,52 @@ class Game {
     this.player1 = new Player('Human', '🙍');
     this.player2 = new Player('Computer', '💻' );
     this.gameType = null;
-    //classic or difficult
-    this.gameData = [this.player1.fighter];
-    this.winConditionsClassic = ['rock > scissors', 'paper > rock', 'scissors > paper']
-    this.winConditionsChallenge = ['change this to be for chef challenge']
     this.winner = null;
+    this.winConditionsChallenge = [
+      {type:'pan', beats: ['spoon', 'whisk']},
+      {type:'bowl', beats: ['pan', 'knife']},
+      {type:'spoon', beats: ['bowl', 'whisk']},
+      {type:'whisk', beats: ['bowl', 'knife']},
+      {type:'knife', beats: ['spoon', 'pan']}
+    ];
   }
 
   autoplay(){
-    this.player1.makeRandomChoice(this.player1.classic);
+    this.player1.makeRandomChoice(this.player1.classicGame);
     console.log(this.player1.fighter);
-    this.player2.makeRandomChoice(this.player2.classic);
+    this.player2.makeRandomChoice(this.player2.classicGame);
     console.log(this.player2.fighter);
   }
 
-  checkGameExperiment(){
-    if (this.winConditionsClassic.includes(`${this.player1.fighter} > ${this.player2.fighter}`)) {
-      this.winner = this.player1.name;
-      return `${this.player1.name} won!`
-      }
-    else if (this.player1.fighter === this.player2.fighter){
-      return "It's a draw!"
-      }
-    else {
-      this.player2.wins++;
-      return `${this.player2.name} won!`
-    }
+
+  autoplayChefVersion(){
+    this.player1.makeRandomChoice(this.player1.chefChallengeGame);
+    console.log(this.player1.fighter.type);
+    this.player2.makeRandomChoice(this.player2.chefChallengeGame);
+    console.log(this.player2.fighter.type);
   }
+
+
+  evaluateGame(){
+    // var compare = this.player2.fighter.type;
+     if (this.player1.fighter === this.player2.fighter){
+        this.winner = null;
+        return `It's a draw!`
+      }
+      else if (this.player1.fighter.beats.includes(`${this.player2.fighter.type}`)) {
+        this.winner = this.player1.name;
+      }
+
+      else {
+        this.winner = this.player2.name;
+        // return `${this.player2.name} won!`
+      }
+      return `${this.winner} won!`
+  }
+
+
+
+
   recordWin() {
       if (this.player1.winner) {
         this.player1.wins++;
@@ -72,3 +91,35 @@ class Game {
   //   this.player2.wins++;
   //   return `${this.player1.name} won!`
   // }
+      // this.winConditionsClassic = ['rock > scissors', 'paper > rock', 'scissors > paper'];
+      //
+      // checkGameExperiment(){
+      //   if (this.winConditionsClassic.includes(`${this.player1.fighter} > ${this.player2.fighter}`)) {
+      //     this.winner = this.player1.name;
+      //     return `${this.player1.name} won!`
+      //     }
+      //   else if (this.player1.fighter === this.player2.fighter){
+      //     return "It's a draw!"
+      //     }
+      //   else {
+      //     this.player2.wins++;
+      //     return `${this.player2.name} won!`
+      //   }
+      // }
+      //
+      // checkGameChef(){
+      //   for (var i = 0; i < 5; i++){
+      //     if (this.player1.chefChallenge2[i].type === `${this.player1.fighter}` && this.player1.chefChallenge2[i].beats.includes(`${this.player2.fighter}`)) {
+      //       this.winner = this.player1.name;
+      //       // return `${this.player1.name} won!`
+      //       }
+      //     else if (this.player1.fighter === this.player2.fighter){
+      //       this.winner = 'No one';
+      //       }
+      //     else {
+      //       this.winner = this.player2.name;
+      //       // return `${this.player2.name} won!`
+      //     }
+      //   }
+      //   return `${this.winner} won!`;
+      // }

@@ -2,7 +2,7 @@
   border: #D57A66 2px solid;
   border-style: dashed;
 }
-
+/* ADD A BACKUP FONT! */
 html{
   width: 100%;
   height: 100%;
@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: gray;
+  background-color: #E8E9F3;
 
 }
 main {
