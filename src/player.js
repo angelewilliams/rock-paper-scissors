@@ -4,12 +4,12 @@ class Player {
     this.token = token || '😎';
     this.wins = 0;
     this.fighter;
-    this.classicGame = [
+    this.classicOptions = [
       {type:'rock', beats:['scissors']},
       {type:'paper', beats:['rock']},
       {type:'scissors', beats:['paper']},
     ];
-    this.chefChallengeGame = [
+    this.difficultOptions = [
       {type:'lemon', beats: ['peas', 'broccoli']},
       {type:'pepper', beats: ['lemon', 'apple']},
       {type:'peas', beats: ['pepper', 'broccoli']},
@@ -20,20 +20,17 @@ class Player {
 //maybe should be take turn
   makeRandomChoice(array) {
     this.fighter = array[Math.floor(Math.random() * array.length)];
-    //this is going to give us a string value of the type property of the object stored in the classic or chef version of the game
+    //this is going to give us a string value of the type property of the object stored in the classic or difficult version of the game
     return this.fighter;
   }
-  takeTurn(input, array) {
-    if (this.name = 'Human'){
-      this.fighter = input;
-      //OR this.fighter.value --that comes from input click
-      //will assign fighter based on the click
-
-    }
-    else if (this.name = 'Computer'){
+  takeTurn(array) {
+    // if (this.name = 'Human'){
+    //   this.fighter = input;
+    // }
+    // else if (this.name = 'Computer'){
     this.fighter = array[Math.floor(Math.random() * array.length)];
       return this.fighter;
-    }
+
   }
 }
 

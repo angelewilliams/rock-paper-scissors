@@ -1,58 +1,42 @@
 class Game {
   constructor(){
     this.player1 = new Player('Human', '🙍');
-    this.player2 = new Player('Computer', '💻' );
+    this.player2 = new Player('Computer', '🤖' );
     this.gameType;
     this.winner;
-  }
-
-  autoplay(){
-    // this.player1.makeRandomChoice(this.player1.classicGame);
-    // console.log(this.player1.fighter);
-    this.player2.makeRandomChoice(this.player2.classicGame);
-    console.log(this.player2.fighter);
-  }
-//for testing purposes
-
-  autoplayChefVersion(){
-    // this.player1.makeRandomChoice(this.player1.chefChallengeGame);
-    // console.log(this.player1.fighter.type);
-    this.player2.makeRandomChoice(this.player2.chefChallengeGame);
-    console.log(this.player2.fighter.type);
   }
   setGameType(input){
     this.gameType = input;
   }
-
   evaluateGame(){
     // var compare = this.player2.fighter.type;
-     if (this.player1.fighter.type === this.player2.fighter.type){
+     if (this.player2.fighter.type === this.player1.fighter){
         this.winner = null;
-        return `It's a draw!`
+        // return `It's a draw!`
       }
-      else if (this.player1.fighter.beats.includes(`${this.player2.fighter.type}`)) {
-        this.winner = this.player1.name;
+      else if (this.player2.fighter.beats.includes(`${this.player1.fighter}`)) {
+        this.winner = this.player2;
       }
       else {
-        this.winner = this.player2.name;
+        this.winner = this.player1;
       }
-      return `${this.winner} won!`
+      // return `${this.winner} won!`
   }
 
   updateScore() {
       if (!this.winner){
-        return 'No points'
+        return
       }
       else if (this.winner === this.player1.name) {
         this.player1.wins++;
-        return `${this.player1.name} has ${this.player1.wins} points`
+        // return `${this.player1.name} has ${this.player1.wins} points`
       } else if (this.winner === this.player2.name) {
         this.player2.wins++;
-        return `${this.player2.name} has ${this.player2.wins} points`
+        // return `${this.player2.name} has ${this.player2.wins} points`
       }
     }
   resetGame(){
-
+    this.winner = null;
 
   }
   setTimeout(){

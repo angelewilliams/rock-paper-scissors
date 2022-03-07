@@ -9,21 +9,32 @@ var changeGameB = document.querySelector('.change-game');
 var game = document.querySelector('.game-area');
 var main = document.querySelector('main');
 var fighters = document.querySelector('.fighters');
-
+var humanWins = document.querySelector('#humanWins');
+var computerWins = document.querySelector('#computerWins');
 // var ___ = document.querySelector('')
 var currentGame = new Game();
-//EVENT LISTENERS
+//--------------EVENT LISTENERS--------------
 
 infoClassic.addEventListener('click', displayClassicGame);
 infoDifficult.addEventListener('click', displayDifficultGame);
 changeGameB.addEventListener('click', displayMainView);
 
 fighters.addEventListener('click', function (event) {
-  // var difficultIds = ['lemon', 'pepper', 'peas', 'broccoli', 'apple']
-  currentGame.player1.fighter = event.target.id;
+  // currentGame.player1.takTurn()
 
-  // console.log(event.target.id);
-    console.log(currentGame.player1.fighter);
+  currentGame.player1.fighter = event.target.id;
+  if (currentGame.gameType === 'classic'){
+    currentGame.player2.takeTurn(currentGame.player2.classicOptions)
+  }
+  else if (currentGame.gameType === 'difficult'){
+    currentGame.player2.takeTurn(currentGame.player2.difficultOptions)
+  }
+  // console.log(currentGame.player1.fighter);
+  // console.log(currentGame.player2.fighter.type);
+  currentGame.evaluateGame();
+  currentGame.updateScore();
+  // console.log(currentGame.winner);
+  displayGameOutcome();
 });
 
 //When a user clicks on a fighter, that should get stored in game.player1.fighter
@@ -40,30 +51,48 @@ fighters.addEventListener('click', function (event) {
 //   // }
 // });
 
-//FUNCTIONS AND EVENT HANDLERS
+//---------FUNCTIONS AND EVENT HANDLERS---------
+function displayGameOutcome(){
+  // fighters.innerHTML = `
+  //   <img class="icon display-result" src="assets/${currentGame.player1.fighter}.png" alt="Player 1 Choice">
+  //   <img class="icon display-result" src="assets/${currentGame.player2.fighter.type}.png" alt="Player 2 Choice">
+  //   `
+  humanWins.innerText = `Wins: ${currentGame.player1.wins}`;
+  computerWins.innerText = `Wins: ${currentGame.player2.wins}`;
+
+  if (!currentGame.winner){
+    message.innerText = `It's a draw!`;
+  }
+  //if not a tie:
+  else { message.innerText = `${currentGame.winner.token}${currentGame.winner.name} won this round!${currentGame.winner.token}`;
+  }
+
+  changeElementDisplay([], [classicGame, difficultGame, changeGameB]);
+
+}
 
 function displayClassicGame(){
   event.preventDefault();
-  changeElementDisplay([classicGame, changeGameB], [infoClassic, infoDifficult])
-  currentGame.setGameType('Classic');
+  changeElementDisplay([classicGame, changeGameB], [infoClassic, infoDifficult]);
+  message.innerText = 'Choose your fighter!';
+  currentGame.setGameType('classic');
   console.log(currentGame.gameType);
 }
 
 function displayDifficultGame(){
   event.preventDefault();
- changeElementDisplay([difficultGame, changeGameB], [infoClassic, infoDifficult])
- currentGame.setGameType('Difficult');
- console.log(currentGame.gameType);
+  changeElementDisplay([difficultGame, changeGameB], [infoClassic, infoDifficult]);
+  message.innerText = 'Choose your fighter!';
+  currentGame.setGameType('difficult');
+  console.log(currentGame.gameType);
 }
 
 function displayMainView(){
   event.preventDefault();
-  changeElementDisplay([infoDifficult, infoClassic], [difficultGame, changeGameB, classicGame])
+  changeElementDisplay([infoDifficult, infoClassic], [difficultGame, changeGameB, classicGame]);
+  message.innerText = 'Choose your game!';
   console.log('Returned to Main View');
 }
-
-
-
 
 // event.target.closest('')
 // event.preventDefault();
@@ -75,12 +104,11 @@ function displayMainView(){
 // https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 // CONTENTS
 
-
 function changeElementDisplay(toView, toHide){
   for (var i = 0; i < toView.length; i ++){
     toView[i].classList.remove("hidden");
-  }
+  };
   for (var i = 0; i < toHide.length; i ++){
     toHide[i].classList.add("hidden");
-  }
+  };
 }

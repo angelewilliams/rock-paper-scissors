@@ -43,12 +43,13 @@ aside {
 h1 {
   margin:25px;
   font-size: 45px;
-  text-align:
+  text-align: center;
 }
 
 h2, h3, h4 {
   margin: 0;
   text-align: center;
+  padding: 6px;
 }
 .heading{
   height: 20%;
