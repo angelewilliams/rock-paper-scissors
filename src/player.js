@@ -17,21 +17,7 @@ class Player {
       {type:'apple', beats: ['peas', 'lemon']}
     ];
   }
-//maybe should be take turn
-  makeRandomChoice(array) {
-    this.fighter = array[Math.floor(Math.random() * array.length)];
-    //this is going to give us a string value of the type property of the object stored in the classic or difficult version of the game
-    return this.fighter;
-  }
   takeTurn(array) {
-    // if (this.name = 'Human'){
-    //   this.fighter = input;
-    // }
-    // else if (this.name = 'Computer'){
     this.fighter = array[Math.floor(Math.random() * array.length)];
-      return this.fighter;
-
   }
 }
-
-// whenever you adjust a property of aclass you should have that be a method within the class.
