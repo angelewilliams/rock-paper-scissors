@@ -23,14 +23,12 @@ var currentGame = new Game();
 infoClassic.addEventListener('click', displayClassicGame);
 infoDifficult.addEventListener('click', displayDifficultGame);
 changeGameB.addEventListener('click', displayMainView);
+
 fighters.addEventListener('click', function (event) {
   currentGame.player1.fighter = event.target.id;
   chooseRobotFighter();
   currentGame.evaluateGame();
   displayGameOutcome();
-  // console.log(currentGame.player1.fighter);
-  // console.log(currentGame.player2.fighter.type);
-    // console.log(currentGame.winner);
 });
 
 //---------FUNCTIONS AND EVENT HANDLERS---------
@@ -47,50 +45,47 @@ function displayGameOutcome(){
   changeElementDisplay([chosenFighters], [classicGame, difficultGame]);
   chosenFighters.innerHTML += `
     <img class="icon display-result" src="assets/${currentGame.player1.fighter}.png" alt="Player 1's Choice">
+    <h3>${currentGame.player1.token}</h3>
     <img class="icon display-result" src="assets/${currentGame.player2.fighter.type}.png" alt="Player 2's Choice">
+    <h3>${currentGame.player2.token}</h3>
     `;
   humanWins.innerText = `Wins: ${currentGame.player1.wins}`;
   robotWins.innerText = `Wins: ${currentGame.player2.wins}`;
   if (!currentGame.winner){
     message.innerText = `It's a draw!`;
   }
-  else { message.innerText = `${currentGame.winner.token} ${currentGame.winner.name} won this round! ${currentGame.winner.token}`;
+  else {
+    message.innerText = `${currentGame.winner.token} ${currentGame.winner.name} won this round! ${currentGame.winner.token}`;
   };
   setTimeout(resetDisplay, 2000);
 }
 
 function resetDisplay(){
+  chosenFighters.innerHTML = '';
+  currentGame.resetGame();
     if (currentGame.gameType === 'classic'){
       displayClassicGame();
-      chosenFighters.innerHTML = '';
     }
     else if (currentGame.gameType === 'difficult'){
       displayDifficultGame();
-      chosenFighters.innerHTML = '';
     }
   };
 
 function displayClassicGame(){
-  // event.preventDefault();
   changeElementDisplay([classicGame, changeGameB], [infoClassic, infoDifficult]);
   message.innerText = 'Choose your fighter!';
   currentGame.setGameType('classic');
-  console.log(currentGame.gameType);
 }
 
 function displayDifficultGame(){
-  // event.preventDefault();
   changeElementDisplay([difficultGame, changeGameB], [infoClassic, infoDifficult]);
   message.innerText = 'Choose your fighter!';
   currentGame.setGameType('difficult');
-  console.log(currentGame.gameType);
 }
 
 function displayMainView(){
-  // event.preventDefault();
   changeElementDisplay([infoDifficult, infoClassic], [difficultGame, changeGameB, classicGame]);
   message.innerText = 'Choose your game!';
-  console.log('Returned to Main View');
 }
 
 function changeElementDisplay(toView, toHide){
