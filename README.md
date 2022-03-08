@@ -31,13 +31,15 @@ The spec for this project can be found [here](https://frontend.turing.edu/projec
 
 Here is a gif of how the game works.
 
-[!Rock-Paper-Scissors Main](https://giphy.com/gifs/DDwLr9VW1O1hhL8o8T)
+![Rock-Paper-Scissors Main](https://giphy.com/gifs/DDwLr9VW1O1hhL8o8T)
 
-[!Rock-Paper-Scissors Demo](https://media.giphy.com/media/DDwLr9VW1O1hhL8o8T/giphy.gif)
+![Rock-Paper-Scissors Demo](https://media.giphy.com/media/DDwLr9VW1O1hhL8o8T/giphy.gif)
 
 
+* Once the user clicks on Classic or Produce Party (_difficult_), the available options of 'fighters' appears.
+   ![Classic - Rock Paper Scissors](assets/rock-paper-scissors.png)
+   ![Difficult - Produce Party](assets/produce-party.png)
 
-* Once the user clicks on a game type (classic or Product Party - difficult), the available options of 'fighters' appears.
 * Then they can select which one they'd like to play which will trigger the 'robot' player to randomly select a fighter.
 * If the user and the 'robot' have the same fighter, the round is a draw. Otherwise the winner's icon is displayed in the message under the header.
 * The round then resets once the fighters have been evaluated and a new round is started.
