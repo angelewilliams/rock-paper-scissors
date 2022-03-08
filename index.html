@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <title>Rock Paper Scissors</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poller+One&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patrick+Hand+SC&family=Poiret+One&family=Poller+One&family=Shrikhand&display=swap" rel="stylesheet">
   </head>
   <body>
     <aside class="player-display" >
       <section class="player-info">
         <h2>Human</h2>
         <img class="player-graphic humanIcon" src="assets/person.png" alt="Person Graphic">
-        <h4 id="humanWins">Wins: 0</h4>
+        <h3 id="humanWins">Wins: 0</h3>
       </section>
-      <button class="hidden change-game"> Change Game </button>
+      <button class="hidden change-game"> Change Game
+      </button>
     </aside>
     <main>
       <section class="heading">
@@ -22,7 +23,7 @@
         <h2 class="message">Choose your game</h2>
       </section>
       <section class="game-area">
-          <article class="game-classic info">
+          <article class="classic-rules info">
             <h3>Classic</h3>
             <ul>
               <li>Rock > Scissors</li>
@@ -30,9 +31,8 @@
               <li>Scissors > Paper</li>
             </ul>
           </article>
-          <article class="game-difficult info">
+          <article class="difficult-rules info">
             <h3>Produce Party</h3>
-            <h4>Difficult</h4>
             <ul>
               <li> Lemon > Peas & Broccoli </li>
               <li> Peas > Pepper & Broccoli </li>
@@ -61,7 +61,7 @@
     <aside class="player-display" >
       <h2>Robot</h2>
       <img class="player-graphic robotIcon" src="assets/robot.png" alt="Robot Graphic">
-      <h4 id="robotWins">Wins: 0</h4>
+      <h3 id="robotWins">Wins: 0</h3>
     </aside>
     <script type="text/javascript" src="./src/game.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>

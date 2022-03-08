@@ -21,7 +21,7 @@ class Game {
         this.player1.wins++;
       }
   }
-  resetGame(){
+  resetGameData(){
     this.winner = null;
     this.player1.fighter = null;
     this.player2.fighter = null;
