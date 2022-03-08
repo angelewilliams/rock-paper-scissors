@@ -31,9 +31,9 @@ The spec for this project can be found [here](https://frontend.turing.edu/projec
 
 Here is a gif of how the game works.
 
-![Rock-Paper-Scissors Main](https://giphy.com/gifs/DDwLr9VW1O1hhL8o8T)
+![Rock-Paper-Scissors Demo 1](https://media.giphy.com/media/fk6S4wa8uQmrulDGOA/giphy.gif)
 
-![Rock-Paper-Scissors Demo](https://media.giphy.com/media/DDwLr9VW1O1hhL8o8T/giphy.gif)
+![Rock-Paper-Scissors Demo 2](https://media.giphy.com/media/DDwLr9VW1O1hhL8o8T/giphy.gif)
 
 
 * Once the user clicks on Classic or Produce Party (_difficult_), the available options of 'fighters' appears.
