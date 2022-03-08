@@ -102,7 +102,7 @@ ul {
   justify-content: space-around;
 }
 
-.info, .change-game{
+.info, .change-game {
   cursor: pointer;
   margin: 10px;
   padding: 10px;
@@ -120,7 +120,7 @@ ul {
   max-height: 5vw;
 }
 
-.icon{
+.icon {
   height: 10vw;
   cursor: pointer;
   transition: 100ms;
