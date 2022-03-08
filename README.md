@@ -3,9 +3,10 @@
 ## Table of Contents
 
 * [Overview](#overview)
+* [Local Setup Instructions](#local-setup-instructions)
 * [Using the App](#using-the-app)
 * [Code Architecture](#code-architecture)
-* [Languages](#languages)
+* [Technologies Used](#technologies-Used)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -17,7 +18,7 @@ In Rock, Paper, Scissors, there are three choices of objects/fighters to chose f
 
 The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/rock-paper-scissors-solo.html).
 
-# Local Set up Instructions
+### Local Setup Instructions
 
 - From this repository, click the code button and copy the SSH link.
 - Open terminal by pressing command + space bar, and search for terminal
@@ -30,11 +31,11 @@ The spec for this project can be found [here](https://frontend.turing.edu/projec
 
 Here is a gif of how the game works.
 
-[!Rock-Paper-Scissors Demo](<iframe src="https://giphy.com/embed/fk6S4wa8uQmrulDGOA" width="480" height="248" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/fk6S4wa8uQmrulDGOA">via GIPHY</a></p>)
+[!Rock-Paper-Scissors Main](https://giphy.com/gifs/DDwLr9VW1O1hhL8o8T)
+
+[!Rock-Paper-Scissors Demo](https://media.giphy.com/media/DDwLr9VW1O1hhL8o8T/giphy.gif)
 
 
-[!Rock-Paper-Scissors Main](<iframe src="https://giphy.com/embed/DDwLr9VW1O1hhL8o8T" width="480" height="248" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/DDwLr9VW1O1hhL8o8T">via GIPHY</a></p>
-)
 
 * Once the user clicks on a game type (classic or Product Party - difficult), the available options of 'fighters' appears.
 * Then they can select which one they'd like to play which will trigger the 'robot' player to randomly select a fighter.
@@ -63,5 +64,5 @@ This project was written using HTML, CSS, and JavaScript
 
 ### Acknowledgements
 
-Mentor code review with Kelsie Besinger-Yeh.
-Icons source: icons8.com
+* Mentor code review with Kelsie Besinger-Yeh.
+* Icons source: icons8.com
