@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width">
     <title>Rock Paper Scissors</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Patrick+Hand+SC&family=Poiret+One&family=Poller+One&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Shrikhand&display=swap" rel="stylesheet">
   </head>
   <body>
     <aside class="player-display" >
       <section class="player-info">
         <h2>Human</h2>
         <img class="player-graphic humanIcon" src="assets/person.png" alt="Person Graphic">
-        <h3 id="humanWins">Wins: 0</h3>
+        <h4  id="humanWins">Wins: 0</h4>
       </section>
       <button class="hidden change-game"> Change Game
       </button>
@@ -43,16 +43,24 @@
           </article>
         <div class="fighters">
           <section class="hidden classic-game ">
-            <img class="icon" id="rock" title="Rock beats Scissors" src="assets/rock.png" alt="Rock Graphic">
-            <img class="icon" id="paper" title="Paper beats Rock" src="assets/paper.png" alt="Paper Graphic">
-            <img class="icon" id="scissors" title="Scissors beats Paper" src="assets/scissors.png" alt="Scissors Graphic">
+            <img class="icon" id="rock" title="Rock beats Scissors"
+             src="assets/rock.png" alt="Rock Graphic">
+            <img class="icon" id="paper" title="Paper beats Rock"
+             src="assets/paper.png" alt="Paper Graphic">
+            <img class="icon" id="scissors" title="Scissors beats Paper"
+             src="assets/scissors.png" alt="Scissors Graphic">
           </section>
           <section class="hidden difficult-game">
-            <img class="icon" id="lemon" title="Lemon beats Peas & Broccoli" src="assets/lemon.png" alt="Lemon Graphic">
-            <img class="icon" id="peas" title="Peas beats Pepper & Broccoli" src="assets/peas.png" alt="Peas Graphic">
-            <img class="icon" id="pepper" title="Pepper beats Lemon & Apple" src="assets/pepper.png" alt="Pepper Graphic">
-            <img class="icon" id="broccoli" title="Broccoli beats Pepper & Apple" src="assets/broccoli.png" alt="Broccoli Graphic">
-            <img class="icon" id="apple" title="Apple beats Peas & Lemon" src="assets/apple.png" alt="Apple Graphic">
+            <img class="icon" id="lemon" title="Lemon beats Peas & Broccoli"
+             src="assets/lemon.png" alt="Lemon Graphic">
+            <img class="icon" id="peas" title="Peas beats Pepper & Broccoli"
+             src="assets/peas.png" alt="Peas Graphic">
+            <img class="icon" id="pepper" title="Pepper beats Lemon & Apple"
+             src="assets/pepper.png" alt="Pepper Graphic">
+            <img class="icon" id="broccoli" title="Broccoli beats Pepper & Apple"
+             src="assets/broccoli.png" alt="Broccoli Graphic">
+            <img class="icon" id="apple" title="Apple beats Peas & Lemon"
+             src="assets/apple.png" alt="Apple Graphic">
           </section>
           <section class="hidden display-results"></section>
         </div>
@@ -61,7 +69,7 @@
     <aside class="player-display" >
       <h2>Robot</h2>
       <img class="player-graphic robotIcon" src="assets/robot.png" alt="Robot Graphic">
-      <h3 id="robotWins">Wins: 0</h3>
+      <h4 id="robotWins">Wins: 0</h4>
     </aside>
     <script type="text/javascript" src="./src/game.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>

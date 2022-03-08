@@ -1,7 +1,7 @@
 class Player {
-  constructor(name, token){
+  constructor(name, token) {
     this.name = name;
-    this.token = token || '😎';
+    this.token = token;
     this.wins = 0;
     this.fighter;
     this.classicOptions = [
@@ -16,8 +16,8 @@ class Player {
       {type:'broccoli', beats: ['pepper', 'apple']},
       {type:'apple', beats: ['peas', 'lemon']}
     ];
-  }
+  };
   takeTurn(array) {
     this.fighter = array[Math.floor(Math.random() * array.length)];
-  }
+  };
 }
