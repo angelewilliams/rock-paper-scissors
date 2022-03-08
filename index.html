@@ -11,56 +11,57 @@
     <aside class="player-display" >
       <section class="player-info">
         <h2>Human</h2>
-        <img class="player-graphic" src="assets/person.png" alt="Person Graphic">
-        <h4>Wins:0</h4>
+        <img class="player-graphic humanIcon" src="assets/person.png" alt="Person Graphic">
+        <h4 id="humanWins">Wins: 0</h4>
       </section>
       <button class="hidden change-game"> Change Game </button>
     </aside>
     <main>
       <section class="heading">
         <h1>Rock Paper Scissors</h1>
-        <h3 class="message">choose your game</h3>
+        <h3 class="message">Choose your game</h3>
       </section>
       <section class="game-area">
-        <!-- <section class="game-options"> -->
           <article class="game-classic info">
             <h3>Classic</h3>
             <ul>
-              <li>rock > scissors</li>
-              <li>scissors > paper</li>
-              <li>paper > rock</li>
+              <li>Rock > Scissors</li>
+              <li>Paper > Rock</li>
+              <li>Scissors > Paper</li>
             </ul>
           </article>
           <article class="game-difficult info">
             <h3>Produce Party</h3>
             <h4>Difficult</h4>
             <ul>
-              <li>Lemon > Peas & Broccoli</li>
-              <li>Pepper > Lemon & Apple </li>
-              <li>Peas > Pepper & Broccoli</li>
-              <li>Broccoli > Pepper & Apple</li>
-              <li>Apple > Peas & Lemon</li>
+              <li> Lemon > Peas & Broccoli </li>
+              <li> Peas > Pepper & Broccoli </li>
+              <li> Pepper > Lemon & Apple </li>
+              <li> Broccoli > Pepper & Apple </li>
+              <li> Apple > Peas & Lemon </li>
             </ul>
           </article>
-        <!-- </section> -->
-        <section class="hidden classic-game">
-          <img class="icon" id="rock" src="assets/rock.png" alt="Rock Graphic">
-          <img class="icon" id="paper" src="assets/paper.png" alt="Paper Graphic">
-          <img class="icon" id="scissors" src="assets/scissors.png" alt="Scissors Graphic">
-        </section>
-        <section class="hidden difficult-game">
-          <img class="icon" src="assets/lemon.png" alt="Lemon Graphic">
-          <img class="icon" src="assets/peas.png" alt="Peas Graphic">
-          <img class="icon" src="assets/pepper.png" alt="Pepper Graphic">
-          <img class="icon" src="assets/broccoli.png" alt="Broccoli Graphic">
-          <img class="icon" src="assets/apple.png" alt="Apple Graphic">
-        </section>
+        <div class="fighters">
+          <section class="hidden classic-game ">
+            <img class="icon" id="rock" data-tooltip="Rock > Scissors" src="assets/rock.png" alt="Rock Graphic">
+            <img class="icon" id="paper" data-tooltip="Paper > Rock" src="assets/paper.png" alt="Paper Graphic">
+            <img class="icon" id="scissors" data-tooltip="Scissors > Paper" src="assets/scissors.png" alt="Scissors Graphic">
+          </section>
+          <section class="hidden difficult-game">
+            <img class="icon" id="lemon" data-tooltip="Lemon > Peas & Broccoli" src="assets/lemon.png" alt="Lemon Graphic">
+            <img class="icon" id="peas" data-tooltip="Peas > Pepper & Broccoli" src="assets/peas.png" alt="Peas Graphic">
+            <img class="icon" id="pepper" data-tooltip="Pepper > Lemon & Apple" src="assets/pepper.png" alt="Pepper Graphic">
+            <img class="icon" id="broccoli" data-tooltip="Broccoli > Pepper & Apple" src="assets/broccoli.png" alt="Broccoli Graphic">
+            <img class="icon" id="apple" data-tooltip="Apple > Peas & Lemon" src="assets/apple.png" alt="Apple Graphic">
+          </section>
+          <section class="hidden display-results"></section>
+        </div>
       </section>
     </main>
     <aside class="player-display" >
-      <h2>Computer</h2>
-      <img class="player-graphic" src="assets/robot.png" alt="RobotGraphic">
-      <h4>Wins:0</h4>
+      <h2>Robot</h2>
+      <img class="player-graphic robotIcon" src="assets/robot.png" alt="Robot Graphic">
+      <h4 id="robotWins">Wins: 0</h4>
     </aside>
     <script type="text/javascript" src="./src/game.js"></script>
     <script type="text/javascript" src="./src/player.js"></script>

@@ -25,4 +25,6 @@
 # **Code Architecture**
 
 Acknowledgements
-icons8.com
+
+Mentor: Kelsie Besinger-Yeh
+Icons: icons8.com
