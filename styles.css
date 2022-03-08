@@ -23,7 +23,7 @@ button {
 }
 
 main {
-  width: 60vw;
+  width: 50vw;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -43,7 +43,9 @@ aside {
 
 h1 {
   margin:25px;
-  font-size: 45px;
+  padding: 10px;
+  border: #CECECE 3px dotted;
+  font-size: 3vw;
   text-align: center;
 }
 
@@ -58,21 +60,26 @@ ul {
   padding: 0;
 }
 
-.heading{
-  height: 20%;
+.heading {
+  height: 27%;
 }
 
-.game-area{
-  height: 80%;
+.message {
+  font-size: 2.4vw;
+}
+
+.game-area {
+  height: 73%;
   width:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   margin: 10px;
+  padding: 3vw 0 3vw 0;
 }
 
-.player-info{
+.player-info {
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -88,12 +95,23 @@ ul {
 }
 
 .player-graphic {
-  max-height: 65px;
+  max-height: 5vw;
 }
 
 .icon{
-  height: 125px;
+  height: 10vw;
   cursor: pointer;
+}
+
+.classic-game, .difficult-game, .display-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.display-results {
+  align-items: center;
+  pointer-events: none;
 }
 
 .hidden {

@@ -1,7 +1,7 @@
 ///------------GLOBAL VARIABLES------------
 var humanIcon = document.querySelector('.humanIcon');
 var robotIcon = document.querySelector('.robotIcon');
-
+var gameTitle = document.querySelector('.game-title');
 var message = document.querySelector('.message');
 
 var gameType = document.querySelectorAll('.info');
@@ -25,14 +25,24 @@ infoDifficult.addEventListener('click', displayDifficultGame);
 changeGameB.addEventListener('click', displayMainView);
 
 fighters.addEventListener('click', function (event) {
+  if (!currentGame.player2.fighter){
   currentGame.player1.fighter = event.target.id;
-  chooseRobotFighter();
+  takeTurnForRobot();
   currentGame.evaluateGame();
   displayGameOutcome();
+}
 });
 
-//---------FUNCTIONS AND EVENT HANDLERS---------
-function chooseRobotFighter() {
+// //---------FUNCTIONS AND EVENT HANDLERS---------
+// HTMLElement(or wrapper).addEventListener('click', function(event) {
+//   if (event.target.classList.contains('some element')) {
+// // call function here to play the game
+//     displayGameType(gameType, infoGameType)
+//   }
+// })
+
+
+function takeTurnForRobot() {
   if (currentGame.gameType === 'classic'){
     currentGame.player2.takeTurn(currentGame.player2.classicOptions)
   }
@@ -43,22 +53,45 @@ function chooseRobotFighter() {
 
 function displayGameOutcome(){
   changeElementDisplay([chosenFighters], [classicGame, difficultGame]);
-  chosenFighters.innerHTML += `
-    <img class="icon display-result" src="assets/${currentGame.player1.fighter}.png" alt="Player 1's Choice">
-    <h3>${currentGame.player1.token}</h3>
-    <img class="icon display-result" src="assets/${currentGame.player2.fighter.type}.png" alt="Player 2's Choice">
-    <h3>${currentGame.player2.token}</h3>
-    `;
-  humanWins.innerText = `Wins: ${currentGame.player1.wins}`;
-  robotWins.innerText = `Wins: ${currentGame.player2.wins}`;
+  showChosenFighters();
+  updateWinsDisplay();
+  updateMessage();
+  setTimeout(resetDisplay, 1750);
+}
+
+function updateMessage(){
   if (!currentGame.winner){
     message.innerText = `It's a draw!`;
   }
   else {
     message.innerText = `${currentGame.winner.token} ${currentGame.winner.name} won this round! ${currentGame.winner.token}`;
   };
-  setTimeout(resetDisplay, 2000);
 }
+
+function updateWinsDisplay(){
+  humanWins.innerText = `Wins: ${currentGame.player1.wins}`;
+  robotWins.innerText = `Wins: ${currentGame.player2.wins}`;
+}
+
+
+function showChosenFighters(){
+  chosenFighters.innerHTML += `
+    <div>
+      <img class="icon display-result" style="pointer-events: none;" src="assets/${currentGame.player1.fighter}.png" alt="Player 1's Choice">
+      <h3>${currentGame.player1.token}</h3>
+    </div>
+    <div>
+      <img class="icon display-result" src="assets/${currentGame.player2.fighter.type}.png" alt="Player 2's Choice">
+      <h3>${currentGame.player2.token}</h3>
+    </div>
+  `;
+}
+
+// function displayGameType(gameType, infoGameType) {
+//  changeElementDisplay([infoGameType, changeGameB], [infoClassic, infoDifficult]);
+//   message.innerText = 'Choose your fighter!';
+//   currentGame.setGameType('gameType');
+// }
 
 function resetDisplay(){
   chosenFighters.innerHTML = '';
@@ -85,14 +118,15 @@ function displayDifficultGame(){
 
 function displayMainView(){
   changeElementDisplay([infoDifficult, infoClassic], [difficultGame, changeGameB, classicGame]);
+  heading.innerText = 'Produce Party!';
   message.innerText = 'Choose your game!';
 }
 
-function changeElementDisplay(toView, toHide){
-  for (var i = 0; i < toView.length; i ++){
-    toView[i].classList.remove("hidden");
+function changeElementDisplay(elementListToView, elementListToHide){
+  for (var i = 0; i < elementListToView.length; i ++){
+    elementListToView[i].classList.remove("hidden");
   };
-  for (var i = 0; i < toHide.length; i ++){
-    toHide[i].classList.add("hidden");
+  for (var i = 0; i < elementListToHide.length; i ++){
+    elementListToHide[i].classList.add("hidden");
   };
 }
